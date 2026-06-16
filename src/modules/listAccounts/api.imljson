@@ -1,0 +1,8 @@
+{
+	"url": "/v1/accounts",
+	"method": "GET",
+	"response": {
+		"iterate": "{{body.data}}",
+		"output": "{{item}}"
+	}
+}

@@ -1,0 +1,16 @@
+{
+	"url": "https://api.letmepost.dev/v1/accounts",
+	"method": "GET",
+	"headers": {
+		"Authorization": "Bearer {{parameters.apiKey}}"
+	},
+	"response": {
+		"valid": "{{statusCode === 200}}",
+		"error": {
+			"message": "[{{statusCode}}] {{body.error.code}}: {{body.error.message}}"
+		}
+	},
+	"log": {
+		"sanitize": ["request.headers.authorization"]
+	}
+}

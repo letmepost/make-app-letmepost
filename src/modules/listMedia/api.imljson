@@ -1,0 +1,11 @@
+{
+	"url": "/v1/media",
+	"method": "GET",
+	"qs": {
+		"limit": "{{parameters.limit}}"
+	},
+	"response": {
+		"iterate": "{{body.data}}",
+		"output": "{{item}}"
+	}
+}

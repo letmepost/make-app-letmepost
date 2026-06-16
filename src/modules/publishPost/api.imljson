@@ -1,0 +1,22 @@
+{
+	"url": "/v1/posts",
+	"method": "POST",
+	"type": "json",
+	"headers": {
+		"Idempotency-Key": "{{parameters.idempotencyKey}}"
+	},
+	"body": {
+		"targets": "{{lmpTargets(parameters.targets, parameters.bluesky)}}",
+		"text": "{{parameters.text}}",
+		"media": "{{parameters.media}}",
+		"firstComment": {
+			"text": "{{parameters.firstComment}}"
+		},
+		"profileId": "{{parameters.profileId}}",
+		"scheduledAt": "{{parameters.scheduledAt}}",
+		"publishNow": "{{parameters.publishNow}}"
+	},
+	"response": {
+		"output": "{{body}}"
+	}
+}

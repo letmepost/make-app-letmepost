@@ -1,0 +1,9 @@
+[
+	{
+		"name": "limit",
+		"type": "number",
+		"label": "Limit",
+		"default": 50,
+		"help": "Maximum number of media assets to return."
+	}
+]

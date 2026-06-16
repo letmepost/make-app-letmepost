@@ -1,0 +1,124 @@
+[
+	{
+		"name": "targets",
+		"type": "array",
+		"label": "Targets",
+		"required": true,
+		"help": "The connected accounts to publish to. The same text and media are sent to every selected account.",
+		"spec": {
+			"name": "accountId",
+			"type": "select",
+			"label": "Account",
+			"options": "rpc://getAccounts"
+		}
+	},
+	{
+		"name": "text",
+		"type": "text",
+		"label": "Text",
+		"help": "The post body. Optional when the post is media-only on platforms that allow it."
+	},
+	{
+		"name": "media",
+		"type": "array",
+		"label": "Media",
+		"help": "Media attachments. Provide a public URL or an existing letmepost media ID for each item.",
+		"spec": {
+			"type": "collection",
+			"spec": [
+				{
+					"name": "kind",
+					"type": "select",
+					"label": "Type",
+					"options": [
+						{ "label": "Image", "value": "image" },
+						{ "label": "Video", "value": "video" }
+					]
+				},
+				{
+					"name": "url",
+					"type": "text",
+					"label": "URL",
+					"help": "Public URL of the media. Use this or Media ID, not both."
+				},
+				{
+					"name": "mediaId",
+					"type": "text",
+					"label": "Media ID",
+					"help": "ID of a previously uploaded letmepost media asset. Use this or URL, not both."
+				},
+				{
+					"name": "altText",
+					"type": "text",
+					"label": "Alt text",
+					"help": "Accessibility description for the media."
+				}
+			]
+		}
+	},
+	{
+		"name": "firstComment",
+		"type": "text",
+		"label": "First comment",
+		"help": "Optional text posted as the first comment under the published post, where the platform supports it."
+	},
+	{
+		"name": "bluesky",
+		"type": "collection",
+		"label": "Bluesky reply",
+		"help": "Reply to an existing Bluesky post. Reply To URI and Reply To CID must be provided together; supply them from a prior publish response. Only applies to Bluesky targets.",
+		"spec": [
+			{
+				"name": "replyToUri",
+				"type": "text",
+				"label": "Reply to URI",
+				"help": "The at:// URI of the parent post being replied to."
+			},
+			{
+				"name": "replyToCid",
+				"type": "text",
+				"label": "Reply to CID",
+				"help": "The CID of the parent post being replied to."
+			},
+			{
+				"name": "replyRootUri",
+				"type": "text",
+				"label": "Thread root URI",
+				"help": "The at:// URI of the thread root. Required together with Thread root CID for replies deeper than the first; omit to default the root to the parent."
+			},
+			{
+				"name": "replyRootCid",
+				"type": "text",
+				"label": "Thread root CID",
+				"help": "The CID of the thread root. Required together with Thread root URI."
+			}
+		]
+	},
+	{
+		"name": "scheduledAt",
+		"type": "date",
+		"label": "Schedule at",
+		"help": "When to publish the post. Leave empty to publish immediately."
+	},
+	{
+		"name": "publishNow",
+		"type": "boolean",
+		"label": "Publish now",
+		"default": true,
+		"help": "Publish immediately. Turn off when scheduling for a future time."
+	},
+	{
+		"name": "profileId",
+		"type": "text",
+		"label": "Profile ID",
+		"advanced": true,
+		"help": "Optional profile to attribute this post to."
+	},
+	{
+		"name": "idempotencyKey",
+		"type": "text",
+		"label": "Idempotency key",
+		"advanced": true,
+		"help": "Reusing the same key never publishes twice — set it to make retries safe."
+	}
+]

@@ -1,0 +1,9 @@
+[
+	{
+		"name": "postId",
+		"type": "text",
+		"label": "Post ID",
+		"required": true,
+		"help": "The ID of the post to retrieve."
+	}
+]

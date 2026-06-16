@@ -1,0 +1,6 @@
+[
+	{ "name": "id", "type": "text", "label": "Account ID" },
+	{ "name": "platform", "type": "text", "label": "Platform" },
+	{ "name": "platformAccountId", "type": "text", "label": "Platform account ID" },
+	{ "name": "displayName", "type": "text", "label": "Display name" }
+]

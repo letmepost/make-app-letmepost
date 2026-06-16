@@ -1,0 +1,9 @@
+[
+	{
+		"name": "apiKey",
+		"type": "password",
+		"label": "API key",
+		"required": true,
+		"help": "Your letmepost.dev API key (lmp_live_… or lmp_test_…). Create one in the dashboard under API keys."
+	}
+]

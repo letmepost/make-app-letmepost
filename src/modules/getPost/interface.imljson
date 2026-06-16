@@ -1,0 +1,22 @@
+[
+	{ "name": "id", "type": "text", "label": "Post ID" },
+	{ "name": "status", "type": "text", "label": "Status" },
+	{ "name": "createdAt", "type": "date", "label": "Created at" },
+	{ "name": "scheduledAt", "type": "date", "label": "Scheduled at" },
+	{
+		"name": "results",
+		"type": "array",
+		"label": "Results",
+		"spec": {
+			"type": "collection",
+			"spec": [
+				{ "name": "accountId", "type": "text", "label": "Account ID" },
+				{ "name": "platform", "type": "text", "label": "Platform" },
+				{ "name": "postId", "type": "text", "label": "Post ID" },
+				{ "name": "status", "type": "text", "label": "Status" },
+				{ "name": "uri", "type": "text", "label": "URI" },
+				{ "name": "cid", "type": "text", "label": "CID" }
+			]
+		}
+	}
+]

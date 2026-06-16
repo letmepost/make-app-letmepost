@@ -1,0 +1,20 @@
+{
+	"id": "post_01HZX0EXAMPLE",
+	"status": "published",
+	"createdAt": "2026-01-15T12:00:00.000Z",
+	"scheduledAt": null,
+	"results": [
+		{
+			"accountId": "acct_01HZBLUESKY",
+			"platform": "bluesky",
+			"postId": "3kabcdefghij",
+			"status": "published",
+			"uri": "at://did:plc:example/app.bsky.feed.post/3kabcdefghij",
+			"cid": "bafyreiexamplecid",
+			"firstCommentUri": "at://did:plc:example/app.bsky.feed.post/3kcommentxyz",
+			"firstCommentCid": "bafyreiexamplecommentcid",
+			"warnings": [],
+			"error": null
+		}
+	]
+}
