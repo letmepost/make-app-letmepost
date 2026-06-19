@@ -6,6 +6,10 @@
 	},
 	"response": {
 		"valid": "{{statusCode === 200}}",
+		"metadata": {
+			"type": "text",
+			"value": "{{first(body.data).displayName}}"
+		},
 		"error": {
 			"message": "[{{statusCode}}] {{body.error.code}}: {{body.error.message}}"
 		}

@@ -1,0 +1,45 @@
+{
+	"name": "Letmepost test — publish to Bluesky",
+	"flow": [
+		{
+			"id": 1,
+			"module": "letmepost-v8hb99:publishPost",
+			"version": 1,
+			"parameters": {},
+			"mapper": {
+				"text": "Testing the letmepost Make app. Posting to Bluesky from a Make scenario.",
+				"publishNow": true,
+				"targets": [
+					{
+						"accountId": ""
+					}
+				]
+			},
+			"metadata": {
+				"designer": {
+					"x": 0,
+					"y": 0
+				}
+			}
+		}
+	],
+	"metadata": {
+		"instant": false,
+		"version": 1,
+		"scenario": {
+			"roundtrips": 1,
+			"maxErrors": 3,
+			"autoCommit": true,
+			"autoCommitTriggerLast": true,
+			"sequential": false,
+			"confidential": false,
+			"dataloss": false,
+			"dlq": false,
+			"freshVariables": false
+		},
+		"designer": {
+			"orphans": []
+		},
+		"zone": "us2.make.com"
+	}
+}

@@ -6,7 +6,7 @@
 		"Idempotency-Key": "{{parameters.idempotencyKey}}"
 	},
 	"body": {
-		"targets": "{{lmpTargets(parameters.targets, parameters.bluesky)}}",
+		"targets": "{{parameters.targets}}",
 		"text": "{{parameters.text}}",
 		"media": "{{parameters.media}}",
 		"firstComment": {

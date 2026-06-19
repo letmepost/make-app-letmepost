@@ -1,84 +1,134 @@
 {
-	"fileVersion": 1,
-	"generalCodeFiles": {
-		"base": "src/general/base.imljson",
-		"common": "src/general/common.json",
-		"readme": "src/general/readme.md"
-	},
-	"components": {
-		"connection": {
-			"letmepost": {
-				"label": "letmepost.dev",
-				"connectionType": "basic",
-				"codeFiles": {
-					"communication": "src/connections/letmepost/api.imljson",
-					"params": "src/connections/letmepost/parameters.imljson"
-				}
-			}
-		},
-		"module": {
-			"publishPost": {
-				"label": "Publish a Post",
-				"description": "Create and publish a post to one or more connected accounts.",
-				"moduleType": "action",
-				"connection": "letmepost",
-				"codeFiles": {
-					"communication": "src/modules/publishPost/api.imljson",
-					"params": "src/modules/publishPost/parameters.imljson",
-					"interface": "src/modules/publishPost/interface.imljson",
-					"samples": "src/modules/publishPost/samples.imljson"
-				}
-			},
-			"listAccounts": {
-				"label": "List Accounts",
-				"description": "List the social accounts connected to your organization.",
-				"moduleType": "search",
-				"connection": "letmepost",
-				"codeFiles": {
-					"communication": "src/modules/listAccounts/api.imljson",
-					"params": "src/modules/listAccounts/parameters.imljson",
-					"interface": "src/modules/listAccounts/interface.imljson"
-				}
-			},
-			"listMedia": {
-				"label": "List Media",
-				"description": "List previously uploaded media assets.",
-				"moduleType": "search",
-				"connection": "letmepost",
-				"codeFiles": {
-					"communication": "src/modules/listMedia/api.imljson",
-					"params": "src/modules/listMedia/parameters.imljson",
-					"interface": "src/modules/listMedia/interface.imljson"
-				}
-			},
-			"getPost": {
-				"label": "Get a Post",
-				"description": "Retrieve a single post and its per-target results.",
-				"moduleType": "action",
-				"connection": "letmepost",
-				"codeFiles": {
-					"communication": "src/modules/getPost/api.imljson",
-					"params": "src/modules/getPost/parameters.imljson",
-					"interface": "src/modules/getPost/interface.imljson"
-				}
-			}
-		},
-		"rpc": {
-			"getAccounts": {
-				"label": "Get Accounts",
-				"connection": "letmepost",
-				"codeFiles": {
-					"communication": "src/rpcs/getAccounts/api.imljson"
-				}
-			}
-		},
-		"function": {
-			"lmpTargets": {
-				"codeFiles": {
-					"code": "src/functions/lmpTargets.js"
-				}
-			}
-		}
-	},
-	"origins": []
+    "fileVersion": 1,
+    "generalCodeFiles": {
+        "base": "src/general/base.imljson",
+        "common": "src/general/common.json",
+        "readme": "src/general/readme.md"
+    },
+    "components": {
+        "connection": {
+            "letmepost": {
+                "label": "letmepost",
+                "connectionType": "basic",
+                "codeFiles": {
+                    "communication": "src/connections/letmepost/api.imljson",
+                    "params": "src/connections/letmepost/parameters.imljson"
+                }
+            }
+        },
+        "module": {
+            "publishPost": {
+                "label": "Publish a Post",
+                "description": "Create and publish a post to one or more connected accounts.",
+                "moduleType": "action",
+                "connection": "letmepost",
+                "codeFiles": {
+                    "communication": "src/modules/publishPost/api.imljson",
+                    "mappableParams": "src/modules/publishPost/parameters.imljson",
+                    "interface": "src/modules/publishPost/interface.imljson",
+                    "samples": "src/modules/publishPost/samples.imljson"
+                }
+            },
+            "listAccounts": {
+                "label": "List Accounts",
+                "description": "List the social accounts connected to your organization.",
+                "moduleType": "search",
+                "connection": "letmepost",
+                "codeFiles": {
+                    "communication": "src/modules/listAccounts/api.imljson",
+                    "mappableParams": "src/modules/listAccounts/parameters.imljson",
+                    "interface": "src/modules/listAccounts/interface.imljson"
+                }
+            },
+            "listMedia": {
+                "label": "List Media",
+                "description": "List previously uploaded media assets.",
+                "moduleType": "search",
+                "connection": "letmepost",
+                "codeFiles": {
+                    "communication": "src/modules/listMedia/api.imljson",
+                    "mappableParams": "src/modules/listMedia/parameters.imljson",
+                    "interface": "src/modules/listMedia/interface.imljson"
+                }
+            },
+            "getPost": {
+                "label": "Get a Post",
+                "description": "Retrieve a single post and its per-target results.",
+                "moduleType": "action",
+                "connection": "letmepost",
+                "codeFiles": {
+                    "communication": "src/modules/getPost/api.imljson",
+                    "mappableParams": "src/modules/getPost/parameters.imljson",
+                    "interface": "src/modules/getPost/interface.imljson"
+                }
+            },
+            "makeApiCall": {
+                "label": "Make an API Call",
+                "description": "Performs an arbitrary authorized API call.",
+                "moduleType": "universal",
+                "connection": "letmepost",
+                "codeFiles": {
+                    "communication": "src/modules/makeApiCall/api.imljson",
+                    "mappableParams": "src/modules/makeApiCall/parameters.imljson",
+                    "interface": "src/modules/makeApiCall/interface.imljson"
+                }
+            }
+        },
+        "rpc": {
+            "getAccounts": {
+                "label": "Get Accounts",
+                "connection": "letmepost",
+                "codeFiles": {
+                    "communication": "src/rpcs/getAccounts/api.imljson"
+                }
+            }
+        }
+    },
+    "origins": [
+        {
+            "label": "Production",
+            "appId": "letmepost-v8hb99",
+            "baseUrl": "https://us2.make.com/api",
+            "appVersion": 1,
+            "apikeyFile": "apikey.secret",
+            "idMapping": {
+                "connection": [
+                    {
+                        "local": "letmepost",
+                        "remote": "letmepost-v8hb99"
+                    }
+                ],
+                "module": [
+                    {
+                        "local": "publishPost",
+                        "remote": "publishPost"
+                    },
+                    {
+                        "local": "listAccounts",
+                        "remote": "listAccounts"
+                    },
+                    {
+                        "local": "listMedia",
+                        "remote": "listMedia"
+                    },
+                    {
+                        "local": "getPost",
+                        "remote": "getPost"
+                    },
+                    {
+                        "local": "makeApiCall",
+                        "remote": "makeApiCall"
+                    }
+                ],
+                "function": [],
+                "rpc": [
+                    {
+                        "local": "getAccounts",
+                        "remote": "getAccounts"
+                    }
+                ],
+                "webhook": []
+            }
+        }
+    ]
 }

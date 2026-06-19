@@ -6,10 +6,15 @@
 		"required": true,
 		"help": "The connected accounts to publish to. The same text and media are sent to every selected account.",
 		"spec": {
-			"name": "accountId",
-			"type": "select",
-			"label": "Account",
-			"options": "rpc://getAccounts"
+			"type": "collection",
+			"spec": [
+				{
+					"name": "accountId",
+					"type": "select",
+					"label": "Account",
+					"options": "rpc://getAccounts"
+				}
+			]
 		}
 	},
 	{
@@ -31,8 +36,14 @@
 					"type": "select",
 					"label": "Type",
 					"options": [
-						{ "label": "Image", "value": "image" },
-						{ "label": "Video", "value": "video" }
+						{
+							"label": "Image",
+							"value": "image"
+						},
+						{
+							"label": "Video",
+							"value": "video"
+						}
 					]
 				},
 				{
@@ -61,38 +72,6 @@
 		"type": "text",
 		"label": "First comment",
 		"help": "Optional text posted as the first comment under the published post, where the platform supports it."
-	},
-	{
-		"name": "bluesky",
-		"type": "collection",
-		"label": "Bluesky reply",
-		"help": "Reply to an existing Bluesky post. Reply To URI and Reply To CID must be provided together; supply them from a prior publish response. Only applies to Bluesky targets.",
-		"spec": [
-			{
-				"name": "replyToUri",
-				"type": "text",
-				"label": "Reply to URI",
-				"help": "The at:// URI of the parent post being replied to."
-			},
-			{
-				"name": "replyToCid",
-				"type": "text",
-				"label": "Reply to CID",
-				"help": "The CID of the parent post being replied to."
-			},
-			{
-				"name": "replyRootUri",
-				"type": "text",
-				"label": "Thread root URI",
-				"help": "The at:// URI of the thread root. Required together with Thread root CID for replies deeper than the first; omit to default the root to the parent."
-			},
-			{
-				"name": "replyRootCid",
-				"type": "text",
-				"label": "Thread root CID",
-				"help": "The CID of the thread root. Required together with Thread root URI."
-			}
-		]
 	},
 	{
 		"name": "scheduledAt",
